@@ -102,4 +102,5 @@ footer {
     .agent-grid {
         grid-template-columns: 1fr;
     }
+}
 footer { background-color: blue; color: white; }
