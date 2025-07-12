@@ -102,4 +102,4 @@ footer {
     .agent-grid {
         grid-template-columns: 1fr;
     }
-}
+.hero-image { width: 50%; height: auto; }
