@@ -97,7 +97,7 @@ footer {
 @media (max-width: 768px) {
     .applications ul {
         columns: 1;
-    }
+  background-color: gray;}
     
     .agent-grid {
         grid-template-columns: 1fr;
