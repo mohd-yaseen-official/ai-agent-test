@@ -52,9 +52,49 @@
             </ul>
         </section>
     </main>
+    <section class="feedback-section">
+        <h2>Submit Your Feedback</h2>
+        <form id="feedbackForm">
+            <input type="text" id="feedbackInput" name="feedback" placeholder="Enter your feedback" required />
+            <button type="submit">Submit</button>
+        </form>
+        <div id="feedbackMessage"></div>
+    </section>
     
     <footer>
         <p>&copy; 2023 AI Agents Information Center. All rights reserved.</p>
     </footer>
+    <script>
+        document.getElementById('feedbackForm').addEventListener('submit', async function(event) {
+            event.preventDefault();
+            const input = document.getElementById('feedbackInput');
+            const messageDiv = document.getElementById('feedbackMessage');
+            const feedback = input.value.trim();
+            if (!feedback) {
+                messageDiv.textContent = 'Please enter your feedback.';
+                return;
+            }
+            try {
+                const response = await fetch('http://85.215.229.78:8447/api/v1/feedbacks/create/', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        project_key: 'e94b3427-0f18-4ded-aa7d-2784bf1e34a4',
+                        title: feedback
+                    })
+                });
+                if (response.ok) {
+                    messageDiv.textContent = 'Thank you for your feedback!';
+                    input.value = '';
+                } else {
+                    messageDiv.textContent = 'Failed to submit feedback. Please try again later.';
+                }
+            } catch (error) {
+                messageDiv.textContent = 'An error occurred. Please try again.';
+            }
+        });
+    </script>
 </body>
 </html>
