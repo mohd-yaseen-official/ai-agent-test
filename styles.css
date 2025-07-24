@@ -102,4 +102,7 @@ footer {
     .agent-grid {
         grid-template-columns: 1fr;
     }
-button[type="submit"] { background-color: blue; }
+/* Assuming there's a rule for the submit button, modify it here. Example: */
+input[type="submit"] {
+  background-color: red;
+}
