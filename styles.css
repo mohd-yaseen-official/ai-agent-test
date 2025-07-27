@@ -82,7 +82,7 @@ section {
     margin-bottom: 0.8rem;
     break-inside: avoid;
 }
-
+footer { font-size: 1.2rem;
 /* Footer */
 footer {
     text-align: center;
